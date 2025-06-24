@@ -14,6 +14,8 @@ import { DifficultyBadge } from "@/components/difficulty-badge"
 import { ProgressCircle } from "@/components/progress-circle"
 import { Footer } from "@/components/footer"
 
+import problems from "@/data/problems.json"
+
 export default function Page() {
 
   const paths = [
@@ -41,6 +43,10 @@ export default function Page() {
                   icon: <Trophy className="h-10 w-10" />,
                 },
               ]
+           
+  const easyProblems = problems.filter(problem => problem.difficulty === "Easy");
+  const mediumProblems = problems.filter(problem => problem.difficulty === "Medium");
+  const hardProblems = problems.filter(problem => problem.difficulty === "Hard");
   return (
     < >
     <div className="flex min-h-screen flex-col">
@@ -148,32 +154,7 @@ export default function Page() {
               </TabsList>
               <TabsContent value="all" className="mt-6">
                 <div className="grid gap-4">
-                  {[
-                    {
-                      title: "Two Sum",
-                      difficulty: "Easy",
-                      category: "Arrays",
-                      completion: 0,
-                    },
-                    {
-                      title: "Linked List Cycle",
-                      difficulty: "Easy",
-                      category: "Linked Lists",
-                      completion: 100,
-                    },
-                    {
-                      title: "Binary Tree Level Order Traversal",
-                      difficulty: "Medium",
-                      category: "Trees",
-                      completion: 50,
-                    },
-                    {
-                      title: "Merge K Sorted Lists",
-                      difficulty: "Hard",
-                      category: "Linked Lists",
-                      completion: 0,
-                    },
-                  ].map((problem, index) => (
+                  {problems.slice(0, 6).map((problem, index) => (
                     <Card key={index} className="overflow-hidden">
                       <div className="flex items-center p-4">
                         <div className="flex-1">
@@ -196,20 +177,7 @@ export default function Page() {
               </TabsContent>
               <TabsContent value="easy" className="mt-6">
                 <div className="grid gap-4">
-                  {[
-                    {
-                      title: "Two Sum",
-                      difficulty: "Easy",
-                      category: "Arrays",
-                      completion: 0,
-                    },
-                    {
-                      title: "Linked List Cycle",
-                      difficulty: "Easy",
-                      category: "Linked Lists",
-                      completion: 100,
-                    },
-                  ].map((problem, index) => (
+                  {easyProblems.slice(0, 6).map((problem, index) => (
                     <Card key={index} className="overflow-hidden">
                       <div className="flex items-center p-4">
                         <div className="flex-1">
@@ -230,7 +198,53 @@ export default function Page() {
                   ))}
                 </div>
               </TabsContent>
-              {/* Other tabs would have similar content */}
+              <TabsContent value="medium" className="mt-6">
+                <div className="grid gap-4">
+                  {mediumProblems.slice(0, 6).map((problem, index) => (
+                    <Card key={index} className="overflow-hidden">
+                      <div className="flex items-center p-4">
+                        <div className="flex-1">
+                          <h3 className="font-semibold">{problem.title}</h3>
+                          <div className="flex items-center gap-2 mt-1">
+                            <DifficultyBadge difficulty={problem.difficulty} />
+                            <span className="text-sm text-muted-foreground">{problem.category}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <ProgressCircle value={problem.completion} />
+                          <Button variant="outline" size="sm" asChild>
+                            <Link href={`/problem/${problem.title.toLowerCase().replace(/\s+/g, "-")}`}>Solve</Link>
+                          </Button>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
+              <TabsContent value="hard" className="mt-6">
+                <div className="grid gap-4">
+                  {hardProblems.slice(0, 6).map((problem, index) => (
+                    <Card key={index} className="overflow-hidden">
+                      <div className="flex items-center p-4">
+                        <div className="flex-1">
+                          <h3 className="font-semibold">{problem.title}</h3>
+                          <div className="flex items-center gap-2 mt-1">
+                            <DifficultyBadge difficulty={problem.difficulty} />
+                            <span className="text-sm text-muted-foreground">{problem.category}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <ProgressCircle value={problem.completion} />
+                          <Button variant="outline" size="sm" asChild>
+                            <Link href={`/problem/${problem.title.toLowerCase().replace(/\s+/g, "-")}`}>Solve</Link>
+                          </Button>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
+              
             </Tabs>
           </div>
         </section>
