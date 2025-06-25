@@ -11,7 +11,21 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "CPP DSA Master",
   description: "Learn and practice C++ Data Structures and Algorithms",
-    generator: 'v0.dev'
+  keywords: [
+    "C++",
+    "Data Structures",
+    "Algorithms",
+    "CPP DSA Master",
+    "Learn C++",
+    "Practice C++",
+    "Coding",
+    "Programming",
+  ],
+  authors: [
+    {
+      name: "SAMAR HIRAU",
+     
+    },]
 }
 
 export default function RootLayout({
