@@ -153,12 +153,12 @@ export function Navbar() {
                 </>
               ) : (
                 <div className="flex flex-col gap-4">
-                  <Button asChild>
+                  <Button asChild className="w-full" variant="outline">
                     <Link href="/login" onClick={() => setIsOpen(false)}>
                       Log in
                     </Link>
                   </Button>
-                  <Button asChild variant="outline">
+                  <Button asChild variant="outline" >
                     <Link href="/signup" onClick={() => setIsOpen(false)}>
                       Sign up
                     </Link>
