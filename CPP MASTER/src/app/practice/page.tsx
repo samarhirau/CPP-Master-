@@ -77,9 +77,9 @@ export default function PracticePage() {
   const hardProblems = filteredProblems.filter((problem) => problem.difficulty === "Hard")
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col ">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 mx-10">
         <div className="container py-8">
           <h1 className="text-3xl font-bold mb-6">Practice Problems</h1>
 
@@ -127,7 +127,7 @@ export default function PracticePage() {
                           </div>
                         </div>
                       </div>
-                      <Button className="md:self-start" asChild>
+                      <Button className="md:self-start bg-white text-black " asChild>
                         <Link href={`/problem/${problem.id}`}>
                           <Code className="h-4 w-4 mr-2" />
                           Solve
@@ -162,7 +162,7 @@ export default function PracticePage() {
                           </div>
                         </div>
                       </div>
-                      <Button className="md:self-start" asChild>
+                      <Button className="md:self-start bg-white text-black " asChild>
                         <Link href={`/problem/${problem.id}`}>
                           <Code className="h-4 w-4 mr-2" />
                           Solve
@@ -197,7 +197,7 @@ export default function PracticePage() {
                           </div>
                         </div>
                       </div>
-                      <Button className="md:self-start" asChild>
+                      <Button className="md:self-start bg-white text-black " asChild>
                         <Link href={`/problem/${problem.id}`}>
                           <Code className="h-4 w-4 mr-2" />
                           Solve
@@ -232,7 +232,7 @@ export default function PracticePage() {
                           </div>
                         </div>
                       </div>
-                      <Button className="md:self-start" asChild>
+                      <Button className="bg-white text-black md:self-start" asChild>
                         <Link href={`/problem/${problem.id}`}>
                           <Code className="h-4 w-4 mr-2" />
                           Solve

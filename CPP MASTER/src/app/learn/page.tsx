@@ -1,4 +1,5 @@
 import Link from "next/link"
+import {Navbar} from "@/components/navbar"
 import { Clock } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -9,34 +10,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 export default function LearnPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2 font-bold text-xl">
-            <Link href="/">CPP DSA Master</Link>
-          </div>
-          <nav className="hidden md:flex gap-6">
-            <Link href="/" className="text-sm font-medium transition-colors hover:text-primary">
-              Home
-            </Link>
-            <Link href="/learn" className="text-sm font-medium transition-colors hover:text-primary text-primary">
-              Learn
-            </Link>
-            <Link href="/practice" className="text-sm font-medium transition-colors hover:text-primary">
-              Practice
-            </Link>
-            <Link href="/roadmap" className="text-sm font-medium transition-colors hover:text-primary">
-              Roadmap
-            </Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm">
-              Log in
-            </Button>
-            <Button size="sm">Sign up</Button>
-          </div>
-        </div>
-      </header>
-      <main className="flex-1">
+<Navbar />
+      <main className="flex-1 mx-10">
         <div className="container py-8">
           <h1 className="text-3xl font-bold mb-6">Learning Modules</h1>
 

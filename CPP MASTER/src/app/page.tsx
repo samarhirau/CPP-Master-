@@ -262,11 +262,11 @@ export default function Page() {
                   <Link href="/dashboard">View Dashboard</Link>
                 </Button>
               </div>
-              <div className="flex justify-center">
+             <div className="flex justify-center">
                 <div className="rounded-lg border bg-card p-8 shadow-sm">
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-xl font-semibold">Your Progress</h3>
-                    <BarChart4 className="h-5 w-5 text-muted-foreground " />
+                    <BarChart4 className="h-5 w-5 text-muted-foreground" />
                   </div>
                   <div className="space-y-4">
                     <div>
@@ -274,8 +274,8 @@ export default function Page() {
                         <span className="text-sm font-medium">Data Structures</span>
                         <span className="text-sm text-muted-foreground">65%</span>
                       </div>
-                      <div className="h-2 w-full rounded-full bg-muted">
-                        <div className="h-full w-[65%] rounded-full bg-primary" />
+                      <div className="h-2 w-full rounded-full bg-gray-800">
+                        <div className="h-full w-[65%] rounded-full bg-white" />
                       </div>
                     </div>
                     <div>
@@ -283,8 +283,8 @@ export default function Page() {
                         <span className="text-sm font-medium">Algorithms</span>
                         <span className="text-sm text-muted-foreground">42%</span>
                       </div>
-                      <div className="h-2 w-full rounded-full bg-muted">
-                        <div className="h-full w-[42%] rounded-full bg-primary" />
+                      <div className="h-2 w-full rounded-full bg-gray-800">
+                        <div className="h-full w-[42%] rounded-full bg-white" />
                       </div>
                     </div>
                     <div>
@@ -292,8 +292,8 @@ export default function Page() {
                         <span className="text-sm font-medium">Problem Solving</span>
                         <span className="text-sm text-muted-foreground">78%</span>
                       </div>
-                      <div className="h-2 w-full rounded-full bg-muted">
-                        <div className="h-full w-[78%] rounded-full bg-primary" />
+                      <div className="h-2 w-full rounded-full bg-gray-800">
+                        <div className="h-full w-[78%] rounded-full bg-white" />
                       </div>
                     </div>
                   </div>
