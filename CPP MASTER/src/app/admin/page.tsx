@@ -22,6 +22,8 @@ import {
 } from "lucide-react"
 import ProblemForm from "@/components/admin/problemForm"
 import { useToast } from "@/hooks/use-toast"
+import DatabaseStatus from "@/components/admin/databaseStatus"
+import SeedButton from "@/components/admin/SeedButton"
 
 interface User {
   _id: string
@@ -168,11 +170,11 @@ export default function AdminDashboard() {
               <p className="text-gray-600 mt-2 text-lg">Manage your platform with powerful tools</p>
             </div>
             <div className="flex items-center gap-3">
-              <Button variant="outline" size="sm" className="gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700">
+              <Button variant="outline" size="sm" className="gap-2">
                 <Download className="w-4 h-4" />
                 Export Data
               </Button>
-              <Button variant="outline" size="sm" className="gap-2 bg-gradient-to-r from-gray-800 to-gray-800 hover:from-gray-500">
+              <Button variant="outline" size="sm" className="gap-2">
                 <Settings className="w-4 h-4" />
                 Settings
               </Button>
@@ -293,6 +295,12 @@ export default function AdminDashboard() {
                 </div>
               </Card>
             </div>
+
+            {/* Database Status */}
+            <DatabaseStatus />
+
+            {/* Seed Data Button */}
+            <SeedButton />
 
             {/* Recent Activity */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
