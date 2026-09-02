@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  basePath: '/CPP-Master-',
+  images: {
+    unoptimized: true, 
+  },
 };
 
 export default nextConfig;
